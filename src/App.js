@@ -16,7 +16,7 @@ import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import ProfilePage from "./pages/ProfilePage";
 import AuthPage from "./pages/AuthPage";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+const BACKEND_URL = "https://clothsonlin321.pythonanywhere.com";
 const API = `${BACKEND_URL}/api`;
 
 // Configure axios to include credentials for sessions
