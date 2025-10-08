@@ -1,70 +1,171 @@
-# Getting Started with Create React App
+# 🛍️ E-Commerce Store (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern and responsive **eCommerce frontend** built with **React**, **Tailwind CSS**, and **CRACO**.
+This project delivers a sleek user interface for browsing products, managing the cart, and handling checkout — designed for performance, scalability, and clean architecture.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📁 Folder Structure
 
-### `npm start`
+```
+project-root/
+├── frontend/           # React frontend (UI)
+│   └── ...
+├── backend/            # Flask backend (API server)
+│   ├── server.py
+│   ├── requirements.txt
+│   ├── data.db
+│   └── flask_session/
+└── README.md
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔁 Backend (Flask)
 
-### `npm test`
+A lightweight Flask API that serves product data, authentication, and order endpoints. The backend uses a file-based SQLite database (`data.db`) and Flask session for simple session management.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🧰 Backend Tech Stack
 
-### `npm run build`
+* Python 3.x
+* Flask
+* Flask-Bcrypt
+* Flask-Session
+* SQLite (file-based)
+* python-dotenv (optional)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📂 Backend Folder Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+backend/
+├── server.py           # Main Flask application
+├── wsgi.py             # WSGI entrypoint
+├── requirements.txt    # Python dependencies
+├── data.db             # SQLite database (included)
+└── flask_session/      # session files
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ⚙️ Run the backend (local)
 
-### `npm run eject`
+```bash
+# 1. Navigate to backend folder
+cd backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 2. (recommended) create and activate virtualenv
+python -m venv venv
+# Linux / macOS
+source venv/bin/activate
+# Windows (PowerShell)
+venv\\Scripts\\Activate.ps1
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 3. Install dependencies
+pip install -r requirements.txt
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# 4. Start the server
+python server.py
+# The server listens on port 8001 by default (http://localhost:8001)
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> Optional environment variables (create a `.env` in `backend/`):
 
-## Learn More
+```
+CORS_ORIGINS=*
+SQLITE_PATH=./data.db
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🔗 API Endpoints (summary)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* `GET /api/` — root/info
+* `GET /api` — same root
+* `POST /api/register` — register new user
+* `POST /api/login` — login
+* `POST /api/logout` — logout
+* `GET /api/profile` — get profile
+* `PUT /api/profile` — update profile
+* `GET /api/categories` — list categories
+* `GET /api/products` — list products
+* `GET /api/products/<product_id>` — product detail
+* `GET /api/check-auth` — check authentication status
+* `POST /api/orders` — create order
+* `GET /api/orders` — list orders
+* `GET /api/orders/<order_id>` — get order detail
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ⚙️ Installation & Setup
 
-### Analyzing the Bundle Size
+Follow these steps to run the project locally:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/<your-username>/<repo-name>.git
 
-### Making a Progressive Web App
+# 2️⃣ Navigate to the project directory
+cd frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# 3️⃣ Install dependencies
+npm install
+# or
+yarn install
 
-### Advanced Configuration
+# 4️⃣ Start the development server
+npm start
+# or
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The app should now be running at `http://localhost:3000/`.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📸 Screenshots
 
-### `npm run build` fails to minify
+> Add your screenshots here once deployed or during development.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## 🖼️ Project Screenshots
+
+![Home Page](https://github.com/user-attachments/assets/4529b627-3ec2-4189-a3da-d6cdef1192f8)
+*Home Page*
+
+![Products Page](https://github.com/user-attachments/assets/533333a9-658c-413e-acc6-ec1df0eef010)
+*Products Page*
+
+![Product Detail](https://github.com/user-attachments/assets/79caa8b4-1d67-49cf-88cf-54b2c182020b)
+*Product Detail Page*
+
+![Checkout Page](https://github.com/user-attachments/assets/bc315206-d9d7-48a5-89d3-5732f2a7101b)
+*Checkout Page*
+
+![User Profile](https://github.com/user-attachments/assets/4e7a8680-bf1b-40d6-9937-f2f043b6658b)
+*User Profile Page*
+
+
+---
+
+## 🔧 Build for Production
+
+```bash
+npm run build
+```
+
+The optimized production build will be available in the `build/` folder.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — feel free to use and modify for your own projects.
+
+---
+
+## 👤 Author
+
+**Abdullah Hussain**
+Full Stack Developer | Passionate about clean UI and scalable backend design.
+🔗 [LinkedIn](https://www.linkedin.com/in/abdullah-hussain-b76801387/)
+💻 [GitHub](https://github.com/abdullahdeveloper123)
+
+---
+
+⭐ *If you like this project, give it a star on GitHub!*
