@@ -13,7 +13,7 @@ import {
   Search
 } from "lucide-react";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://clothsonlin321.pythonanywhere.com';
 const API = `${BACKEND_URL}/api`;
 
 const ProductsPage = () => {
