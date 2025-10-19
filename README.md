@@ -163,7 +163,7 @@ This project is licensed under the **MIT License** — feel free to use and modi
 
 **Abdullah Hussain**
 Full Stack Developer | Passionate about clean UI and scalable backend design.
-🔗 [LinkedIn](https://www.linkedin.com/in/abdullah-hussain-b76801387/)
+🔗 [LinkedIn](https://www.linkedin.com/in/abdullah-hussain-70892338a)
 💻 [GitHub](https://github.com/abdullahdeveloper123)
 
 ---
